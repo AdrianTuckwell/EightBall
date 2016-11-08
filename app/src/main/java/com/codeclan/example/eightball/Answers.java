@@ -16,12 +16,13 @@ public class Answers implements Answerable {
 
     public Answers(){
         mAnswers = new ArrayList<String>();
+        setupAnswers();
     }
 
     public Answers(ArrayList<String> existingAnswers){
         //make a brand new version of mAnswers
         mAnswers = new ArrayList<String>(existingAnswers);
-        setupAnswers();
+
     }
 
     //return a clone of mAnswers so user cant change it
@@ -58,7 +59,6 @@ public class Answers implements Answerable {
     public String getAnswer(){
         Random rand = new Random();
         int listSize = getLength();
-        int randomIndex = rand.nextInt(listSize);
         String answer = getAnswerAtIndex(randomIndex);
         return answer;
     }
