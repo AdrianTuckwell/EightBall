@@ -37,7 +37,8 @@ public class Answers implements Answerable {
                 "No",
                 "Maybe",
                 "I don't know",
-                "Can you repeat the question?"
+                "Can you repeat the question?",
+                "Possibly"
         };
         for (String answer : answers){
             add(answer);
@@ -59,7 +60,8 @@ public class Answers implements Answerable {
     public String getAnswer(){
         Random rand = new Random();
         int listSize = getLength();
-        String answer = getAnswerAtIndex(randomIndex);
+        int index = rand.nextInt(listSize);
+        String answer = getAnswerAtIndex(index);
         return answer;
     }
 }
