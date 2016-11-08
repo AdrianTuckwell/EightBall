@@ -22,7 +22,6 @@ public class Answers implements Answerable {
         //make a brand new version of mAnswers
         mAnswers = new ArrayList<String>(existingAnswers);
         setupAnswers();
-
     }
 
     //return a clone of mAnswers so user cant change it
