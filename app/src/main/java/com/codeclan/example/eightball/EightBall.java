@@ -1,5 +1,6 @@
 package com.codeclan.example.eightball;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +16,6 @@ import android.widget.TextView;
 public class EightBall extends AppCompatActivity{
 
     EditText mQuestionEditText;
-    TextView mAnswerText;
     Button mShakeButton;
 
     @Override
@@ -26,7 +26,7 @@ public class EightBall extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         mQuestionEditText = (EditText)findViewById(R.id.question_text);
-        mAnswerText = (TextView)findViewById(R.id.answer_text);
+
         mShakeButton = (Button)findViewById(R.id.shake_button);
 
         mShakeButton.setOnClickListener(new View.OnClickListener()
@@ -39,7 +39,13 @@ public class EightBall extends AppCompatActivity{
                 Log.d("EightBall", "The question asked was'" + question + "'");
 
                 Answers answers = new Answers();
-                mAnswerText.setText(answers.getAnswer());
+                String answer = answers.getAnswer();
+
+                Intent intent = new Intent(EightBall.this, AnswerActivity.class);
+
+                intent.putExtra("answer", answer);
+
+                startActivity(intent);
 
             }
         });

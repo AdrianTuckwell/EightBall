@@ -38,16 +38,7 @@
         android:fontFamily="casual"
         />
 
-    <TextView
-        android:id="@+id/answer_text"
-        android:textSize="40dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:text=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        />
+
 
 
 </LinearLayout>
