@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.InputStream;
+
 /**
  * Created by user on 08/11/2016.
  */
@@ -34,11 +36,18 @@ public class EightBall extends AppCompatActivity{
             @Override
             public void onClick(View view)
             {
+
                 Log.d("EightBall", "Shake button clicked!");
+
                 String question = mQuestionEditText.getText().toString();
+
                 Log.d("EightBall", "The question asked was'" + question + "'");
 
-                Answers answers = new Answers();
+                // implements the Answerable interface to pull in additional answers from text file
+
+                InputStream input = getResources().openRawResource(R.raw.sandy_answers);
+                Answerable answers = new TextFileAnswers(input);
+
                 String answer = answers.getAnswer();
 
                 Intent intent = new Intent(EightBall.this, AnswerActivity.class);
@@ -46,7 +55,6 @@ public class EightBall extends AppCompatActivity{
                 intent.putExtra("answer", answer);
 
                 startActivity(intent);
-
             }
         });
 

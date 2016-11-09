@@ -3,7 +3,7 @@
     <string name="question">Ask a question?</string>
     <string name="shake">Shake the ball</string>
     <string name="answer_text"></string>
-    <string name="intro_text">Welcome to the magic 8 ball game:</string>
+    <string name="intro_text">Welcome to the magic 8 ball game...</string>
     <string name="answer_activity_title">Computer says...</string>
 
 </resources>

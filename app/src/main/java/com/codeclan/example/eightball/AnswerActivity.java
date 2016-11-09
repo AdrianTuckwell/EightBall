@@ -27,10 +27,4 @@ public class AnswerActivity extends AppCompatActivity{
         String answer = extras.getString("answer");
         mAnswerText.setText(answer);
     }
-
-
-
-
-
-
 }
